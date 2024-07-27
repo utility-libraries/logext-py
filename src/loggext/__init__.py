@@ -6,7 +6,7 @@ r"""
 __author__ = "PlayerG9"
 __copyright__ = "Copyright 2024, utility-libraries"
 __credits__ = ["PlayerG9"]
-__license__ = "MIT"
+__license__ = "GPLv3"
 __maintainer__ = "utility-libraries"
 __email__ = None
 __status__ = "Development"  # Prototype, Development, Production
