@@ -5,8 +5,8 @@ r"""
 import logging
 
 
-__all__ = ['is_configured']
+__all__ = ['logging_is_configured']
 
 
-def is_configured() -> bool:
+def logging_is_configured() -> bool:
     return len(logging.root.handlers) > 0

@@ -2,4 +2,4 @@
 r"""
 
 """
-from .handler import *
+from .colored import *
