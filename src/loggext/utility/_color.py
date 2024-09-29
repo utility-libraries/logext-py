@@ -10,6 +10,10 @@ __all__ = ['StandardColors']
 
 
 class StandardColors(enum.IntEnum):
+    r"""
+    collection of standard colors for the terminal
+    """
+
     def __new__(cls, ansi_code: int, rgb: t.Tuple[int, int, int], hexadecimal: str) -> t.NoReturn:
         obj = int.__new__(cls, ansi_code)
         obj._value_ = ansi_code

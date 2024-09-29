@@ -19,6 +19,7 @@ COLOR_MAP: t.Dict[int, str] = {
     logging.ERROR: StandardColors.BRIGHT_RED.escape_code_fg,
     logging.CRITICAL: StandardColors.BRIGHT_MAGENTA.escape_code_fg,
 }
+r"""This can be adjusted/extended for custom coloring"""
 
 
 class ColoredConsoleHandler(logging.StreamHandler):

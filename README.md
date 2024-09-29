@@ -46,7 +46,7 @@ if not loggext.logging_is_configured():
   result=True,  # log the result
 )  # note: exception-logging is always
 def myfn(arg):
-    ...  # stuff
+    ...  # your code
 
 myfn("value")
 # DEBUG:root:<function myfn at 0x7f06a6cc3400> was called with ('value')
