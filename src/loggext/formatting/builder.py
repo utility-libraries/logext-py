@@ -10,6 +10,8 @@ __all__ = ['LoggingFormatBuilder']
 
 class LoggingFormatBuilder:
     r"""
+    ```pycon
+
     >>> logging_format: str = LoggingFormatBuilder(separator=" | ") \
     ...     .add_asctime() \
     ...     .add_levelname(".3") \
@@ -17,6 +19,8 @@ class LoggingFormatBuilder:
     ...     .add_lineno(">3") \
     ...     .add_message() \
     ...     .build()
+
+    ```
     """
 
     _separator: str

@@ -11,3 +11,4 @@ logging extensions for pythons logging library
     - with support for asnyc-functions
 - additional logging-handlers
     - ColoredConsoleHandler
+- format-builder

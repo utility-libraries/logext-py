@@ -6,9 +6,10 @@ repo_name: utility-libraries/loggext-py
 copyright: Copyright &copy; 2024, utility-libraries
 nav:
   - Home:
-      - index.md
+      - loggext: index.md
       - Installation: installation.md
       - Usage: usage.md
+      - Abbreviations: abbreviations.md
   - Code Reference: reference/
 theme:
   name: material
@@ -31,6 +32,8 @@ theme:
     - navigation.footer
     - content.code.copy
     - content.code.annotate
+    - content.tooltips
+    - content.tabs.link
 plugins:
   - autorefs
   - search
@@ -38,6 +41,8 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
+          options:
+            docstring_style: sphinx
           paths:
             - src
   - gen-files:
@@ -67,3 +72,11 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets:
+      auto_append:
+        - docs/includes/abbreviations.md
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true

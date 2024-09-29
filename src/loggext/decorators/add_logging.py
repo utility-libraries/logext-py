@@ -24,11 +24,16 @@ def add_logging(
     r"""
     adds some logging messages to a function
 
+    ```pycon
+
     >>> @add_logging()
     ... def foo():
     ...     pass
 
-    note: supports async functions
+    ```
+
+    !!! note
+        `add_logging` supports async functions
 
     :param fn: function to be decorated
     :param logger: specific logger to use (otherwise root-logger)

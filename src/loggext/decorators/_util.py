@@ -10,9 +10,13 @@ __all__ = ['timer', 'format_delta_ns']
 
 def timer(*, precision: int):
     r"""
+    ```pycon
+
     >>> timing = timer(precision=2)
     >>> next(timing)
     >>> next(timing)
+
+    ```
 
     :param precision: formatted time precision
     """

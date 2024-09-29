@@ -24,7 +24,7 @@ r"""This can be adjusted/extended for custom coloring"""
 
 class ColoredConsoleHandler(logging.StreamHandler):
     r"""
-    same as :class:`logging.StreamHandler` but with colored output based on the logging-level of each message
+    same as `StreamHandler` but with colored output based on the logging-level of each message
     """
     STDOUT = sys.stdout
     STDERR = sys.stderr
@@ -39,7 +39,7 @@ class ColoredConsoleHandler(logging.StreamHandler):
 
 class LevelColorConsoleHandler(logging.StreamHandler):
     r"""
-    similar to :class:`ColoredConsoleHandler` but colors only the levelname
+    similar to `ColoredConsoleHandler` but colors only the levelname
     """
     STDOUT = sys.stdout
     STDERR = sys.stderr
