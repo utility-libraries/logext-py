@@ -44,13 +44,13 @@ def add_logging(
             async def wrapper(*args, **kwargs):
                 timing = timer(precision=timeit_precision)
                 try:
-                    if call:
+                    if logger.isEnabledFor(logging.DEBUG) and call:
                         message = f"{func} was called"
                         if call_args:
                             message += f" with ({_format_args(*args, **kwargs)})"
-                        logging.debug(message)
+                        logger.debug(message)
                     res = await func(*args, **kwargs)
-                    if result or timeit:
+                    if logger.isEnabledFor(logging.DEBUG) and (result or timeit):
                         resfmt = f" {res!r}" if result else ""
                         timefmt = f" after {next(timing)}" if timeit else ""
                         logger.debug(f"{func} returned{resfmt}{timefmt}")
@@ -66,13 +66,13 @@ def add_logging(
             def wrapper(*args, **kwargs):
                 timing = timer(precision=timeit_precision)
                 try:
-                    if call:
+                    if logger.isEnabledFor(logging.DEBUG) and call:
                         message = f"{func} was called"
                         if call_args:
                             message += f" with ({_format_args(*args, **kwargs)})"
-                        logging.debug(message)
+                        logger.debug(message)
                     res = func(*args, **kwargs)
-                    if result or timeit:
+                    if logger.isEnabledFor(logging.DEBUG) and (result or timeit):
                         resfmt = f" {res!r}" if result else ""
                         timefmt = f" after {next(timing)}" if timeit else ""
                         logger.debug(f"{func} returned{resfmt}{timefmt}")
