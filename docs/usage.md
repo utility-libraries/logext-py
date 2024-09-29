@@ -65,3 +65,18 @@ Worried about the performance? You don't need to!
 
 If your logger is not configured for `logging.DEBUG` messages then they are neither generated nor logged.
 This way no computation is wasted to e.g. convert the complex function-arguments to their representative form.
+
+## Format-Builder
+
+```python
+from loggext.formatting import LoggingFormatBuilder
+
+logging_format: str = LoggingFormatBuilder(separator=" | ") \
+     .add_asctime() \
+     .add_levelname(".3") \
+     .add_module("<10") \
+     .add_lineno(">3") \
+     .add_message() \
+     .build()
+# '{asctime} | {levelname:.3} | {module:<10} | {lineno:>3} | {message}'
+```
