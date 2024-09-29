@@ -1,3 +1,6 @@
+[![PyPI - Version](https://img.shields.io/pypi/v/loggext)
+](https://pypi.org/project/loggext/)
+
 # loggext
 
 logging extensions for pythons logging library
