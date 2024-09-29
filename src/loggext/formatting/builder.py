@@ -27,6 +27,7 @@ class LoggingFormatBuilder:
         self._parts = []
 
     def build(self) -> str:
+        r""" create the final logging-format """
         return self._separator.join(self._parts)
 
     def add_field(self, name: str, fmt: str = None) -> 'LoggingFormatBuilder':
@@ -35,6 +36,11 @@ class LoggingFormatBuilder:
             self._parts.append(f"{{{name}}}")
         else:
             self._parts.append(f"{{{name}:{fmt}}}")
+        return self
+
+    def add_literal(self, literal: str) -> 'LoggingFormatBuilder':
+        r""" adds a literal string as given """
+        self._parts.append(literal)
         return self
 
     def add_asctime(self, fmt: str = None) -> 'LoggingFormatBuilder':
