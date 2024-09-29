@@ -17,5 +17,6 @@ __version__ = '.'.join(map(str, __version_info__))
 from . import (
     handlers,
     decorators,
+    formatting,
 )
 from .utility import *
