@@ -66,7 +66,32 @@ Worried about the performance? You don't need to!
 If your logger is not configured for `logging.DEBUG` messages then they are neither generated nor logged.
 This way no computation is wasted to e.g. convert the complex function-arguments to their representative form.
 
+## Extra-Data
+
+The attribute from the normal `logging.LogRecord` are quite good but can be extended.
+For that case there are some providers in [loggext.extradata][] which inject additional fields.
+
+This allows you to add for example the hostname of the current device to your log-message.
+
+```python
+import logging
+from loggext.extradata import HostnameField, UsernameField, ProgramNameField
+
+logging.basicConfig(
+   format='%(programName)s | %(message)',
+)
+logging.getLogger().addFilter(HostnameField() | ProgramNameField())  # (1)
+logging.getLogger().addFilter(UsernameField())
+
+logging.info("Hello World")  # "script.py | Hello World"
+```
+
+1. by loggext provided fields can be combined with `|` or `&`.
+
 ## Format-Builder
+
+The [LoggingFormatBuilder][loggext.formatting.LoggingFormatBuilder] can be used to create the logging-format in a more human way.
+Additionally, you could use some pre-defined formats from [loggext.formatting.default_formats][]. 
 
 ```python
 from loggext.formatting import LoggingFormatBuilder
