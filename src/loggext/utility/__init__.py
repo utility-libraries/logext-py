@@ -2,4 +2,5 @@
 r"""
 
 """
+from ._color import *
 from ._impl import *

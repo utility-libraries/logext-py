@@ -5,6 +5,7 @@ r"""
 import sys
 import logging
 import typing as t
+from ..utility import StandardColors
 
 
 __all__ = ['ColoredConsoleHandler', 'LevelColorConsoleHandler']
@@ -12,11 +13,11 @@ __all__ = ['ColoredConsoleHandler', 'LevelColorConsoleHandler']
 
 ENDCOLOR = "\033[0m"
 COLOR_MAP: t.Dict[int, str] = {
-    logging.DEBUG: "\033[37m",  # light gray
-    logging.INFO: "\033[94m",  # light blue
-    logging.WARN: "\033[93m",  # light yellow
-    logging.ERROR: "\033[91m",  # light red
-    logging.CRITICAL: "\033[95m",  # light magenta
+    logging.DEBUG: StandardColors.BRIGHT_BLACK.escape_code_fg,
+    logging.INFO: StandardColors.BRIGHT_BLUE.escape_code_fg,
+    logging.WARN: StandardColors.BRIGHT_YELLOW.escape_code_fg,
+    logging.ERROR: StandardColors.BRIGHT_RED.escape_code_fg,
+    logging.CRITICAL: StandardColors.BRIGHT_MAGENTA.escape_code_fg,
 }
 
 
