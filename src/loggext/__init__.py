@@ -11,7 +11,7 @@ __maintainer__ = "utility-libraries"
 __email__ = None
 __status__ = "Development"  # Prototype, Development, Production
 __description__ = "logging extensions for pythons logging library"
-__version_info__ = (0, 2, 0)
+__version_info__ = (0, 3, 0)
 __version__ = '.'.join(map(str, __version_info__))
 
 from . import (
