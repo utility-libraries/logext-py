@@ -8,7 +8,7 @@ import typing as t
 from ..utility import StandardColors
 
 
-__all__ = ['ColoredConsoleHandler', 'LevelColorConsoleHandler']
+__all__ = ['ColoredConsoleHandler', 'LevelColoredConsoleHandler']
 
 
 ENDCOLOR = "\033[0m"
@@ -37,7 +37,7 @@ class ColoredConsoleHandler(logging.StreamHandler):
         return f"{colorcode}{msg}{ENDCOLOR}"
 
 
-class LevelColorConsoleHandler(logging.StreamHandler):
+class LevelColoredConsoleHandler(logging.StreamHandler):
     r"""
     similar to `ColoredConsoleHandler` but colors only the levelname
     """
