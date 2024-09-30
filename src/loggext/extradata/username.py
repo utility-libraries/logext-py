@@ -36,5 +36,5 @@ class UsernameField(DataProvider):
             import getpass
             return getpass.getuser()
 
-    def filter(self, record):
-        record.username = self._username
+    def add_data(self, record):
+        record.username = self._username()

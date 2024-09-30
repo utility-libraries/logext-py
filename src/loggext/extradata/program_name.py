@@ -36,5 +36,5 @@ class ProgramNameField(DataProvider):
             return p.basename(sys.executable)
         return "python"
 
-    def filter(self, record):
-        record.programName = self._program_name
+    def add_data(self, record):
+        record.programName = self._program_name()

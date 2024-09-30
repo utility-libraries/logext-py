@@ -26,5 +26,5 @@ class HostnameField(DataProvider):
         import socket
         return socket.gethostname()
 
-    def filter(self, record):
-        record.hostname = self._hostname
+    def add_data(self, record):
+        record.hostname = self._hostname()

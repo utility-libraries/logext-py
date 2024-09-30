@@ -14,8 +14,12 @@ class DataProvider(logging.Filter):
     # noinspection PyMissingConstructor
     def __init__(self): ...
 
+    def filter(self, record: logging.LogRecord):
+        self.add_data(record)
+        return True
+
     @abc.abstractmethod
-    def filter(self, record: logging.LogRecord): ...
+    def add_data(self, record: logging.LogRecord): ...
 
     def __rand__(self, other):
         return Combiner(self, other)
