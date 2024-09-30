@@ -4,6 +4,8 @@
 # loggext-py
 logging extensions for pythons logging library
 
+See the [Documentation](https://utility-libraries.github.io/loggext-py/).
+
 <!-- TOC -->
 * [loggext-py](#loggext-py)
   * [Installation](#installation)
