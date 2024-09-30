@@ -14,12 +14,11 @@ class ProgramNameField(DataProvider):
     r"""
     Selects a suitable program-name and adds it to the LogRecord as `programName`
 
-    ```pycon
-
-    >>> import logging
-    >>> logging.getLogger().addFilter(ProgramNameField())
-
-    ```
+    !!! example
+        ```pycon
+        >>> import logging
+        >>> ProgramNameField().install()
+        ```
     """
 
     @cache

@@ -18,12 +18,11 @@ class ShortNameField(DataProvider):
     !!! example
         `project.custom.module` -> `p.c.module`
 
-    ```pycon
-
-    >>> import logging
-    >>> logging.getLogger().addFilter(ShortNameField())
-
-    ```
+    !!! example
+        ```pycon
+        >>> import logging
+        >>> ShortNameField().install()
+        ```
     """
 
     @cache

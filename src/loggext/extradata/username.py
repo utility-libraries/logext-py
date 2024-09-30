@@ -13,12 +13,11 @@ class UsernameField(DataProvider):
     r"""
     Finds the username and adds it to the LogRecord as `username`
 
-    ```pycon
-
-    >>> import logging
-    >>> logging.getLogger().addFilter(UsernameField())
-
-    ```
+    !!! example
+        ```pycon
+        >>> import logging
+        >>> UsernameField().install()
+        ```
 
     !!! info
         On UNIX systems this uses the :mod:`pwd` module which means ``root`` will

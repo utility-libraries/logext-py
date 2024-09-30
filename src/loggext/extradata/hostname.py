@@ -13,12 +13,11 @@ class HostnameField(DataProvider):
     r"""
     Finds the hostname and adds it to the LogRecord as `hostname`
 
-    ```pycon
-
-    >>> import logging
-    >>> logging.getLogger().addFilter(HostnameField())
-
-    ```
+    !!! example
+        ```pycon
+        >>> import logging
+        >>> HostnameField().install()
+        ```
     """
 
     @cache

@@ -1,12 +1,4 @@
-# Usage
-
-## ColoredConsoleHandler
-
-The `ColoredConsoleHandler` is similar to the `logging.StreamHandler` with the difference of colored output.
-
-The color is dependent on the logging-level.
-
-## logging-decorator
+## [add_logging][loggext.decorators.add_logging]
 
 The `add_logging` decorator can quickly add logging to a function or method which can help during debugging.
 
@@ -65,43 +57,3 @@ Worried about the performance? You don't need to!
 
 If your logger is not configured for `logging.DEBUG` messages then they are neither generated nor logged.
 This way no computation is wasted to e.g. convert the complex function-arguments to their representative form.
-
-## Extra-Data
-
-The attribute from the normal `logging.LogRecord` are quite good but can be extended.
-For that case there are some providers in [loggext.extradata][] which inject additional fields.
-
-This allows you to add for example the hostname of the current device to your log-message.
-
-```python
-import logging
-from loggext.extradata import HostnameField, UsernameField, ProgramNameField
-
-logging.basicConfig(
-   format='%(programName)s | %(message)',
-)
-logging.getLogger().addFilter(HostnameField() | ProgramNameField())  # (1)
-logging.getLogger().addFilter(UsernameField())
-
-logging.info("Hello World")  # "script.py | Hello World"
-```
-
-1. by loggext provided fields can be combined with `|` or `&`.
-
-## Format-Builder
-
-The [LoggingFormatBuilder][loggext.formatting.LoggingFormatBuilder] can be used to create the logging-format in a more human way.
-Additionally, you could use some pre-defined formats from [loggext.formatting.default_formats][]. 
-
-```python
-from loggext.formatting import LoggingFormatBuilder
-
-logging_format: str = LoggingFormatBuilder(separator=" | ") \
-     .add_asctime() \
-     .add_levelname(".3") \
-     .add_module("<10") \
-     .add_lineno(">3") \
-     .add_message() \
-     .build()
-# '{asctime} | {levelname:.3} | {module:<10} | {lineno:>3} | {message}'
-```

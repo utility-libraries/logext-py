@@ -8,7 +8,12 @@ nav:
   - Home:
       - loggext: index.md
       - Installation: installation.md
-      - Usage: usage.md
+      - Usage:
+          - loggext.decorators: usage/decorators.md
+          - loggext.extradata: usage/extradata.md
+          - loggext.formatting: usage/formatting.md
+          - loggext.handlers: usage/handlers.md
+          - loggext.utility: usage/utility.md
       - Abbreviations: abbreviations.md
   - Code Reference: reference/
 theme:
@@ -22,7 +27,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
 #    - navigation.sections
-#    - navigation.expand
+    - navigation.expand
 #    - navigation.indexes
     - toc.follow
     - navigation.top

@@ -14,6 +14,11 @@ class DataProvider(logging.Filter):
     # noinspection PyMissingConstructor
     def __init__(self): ...
 
+    def install(self, logger: logging.Logger = logging.root) -> None:
+        r""" installs this field """
+        for handler in logger.handlers:
+            handler.addFilter(self)
+
     def filter(self, record: logging.LogRecord):
         self.add_data(record)
         return True
