@@ -9,4 +9,5 @@ r"""
 """
 from .hostname import *
 from .program_name import *
+from .short_name import *
 from .username import *
