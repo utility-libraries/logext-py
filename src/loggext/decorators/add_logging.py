@@ -14,7 +14,7 @@ __all__ = ['add_logging']
 
 def add_logging(
         fn: t.Callable = None,
-        *, logger: logging.Logger = logging,
+        *, logger: logging.Logger = logging.root,
         call: bool = True,
         call_args: bool = True,
         timeit: bool = True,
